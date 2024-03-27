@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: curatordb-pgha-config
+data:
+  curatordb-local-config: |
+    postgresql:
+      pg_hba:
+      - host curatordb curator 127.0.0.1/32 md5
+      - host curatordb curator curatordb-primary.curator-system.svc md5
